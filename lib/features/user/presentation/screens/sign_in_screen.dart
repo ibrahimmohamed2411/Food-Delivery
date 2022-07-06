@@ -45,6 +45,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 CustomCard(
+                  padding: EdgeInsets.all(30),
                   child: Form(
                     key: _formKey,
                     child: Column(

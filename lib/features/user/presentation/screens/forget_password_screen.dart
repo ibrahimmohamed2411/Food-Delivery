@@ -30,6 +30,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   height: 50,
                 ),
                 CustomCard(
+                  padding: EdgeInsets.all(30),
                   child: Form(
                     key: _formKey,
                     child: CustomFormField(

@@ -1,5 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:food_delivery/features/products/data/datasources/products_remote_data_source.dart';
+import 'package:food_delivery/features/products/data/repositories/products_repository_imp.dart';
+import 'package:food_delivery/features/products/domain/repositories/products_repository.dart';
+import 'package:food_delivery/features/products/domain/usecases/get_all_products_usecase.dart';
+import 'package:food_delivery/features/products/presentation/cubit/products_cubit.dart';
 import 'package:food_delivery/features/user/data/datasources/user_local_data_source.dart';
 import 'package:food_delivery/features/user/data/datasources/user_remote_data_source.dart';
 import 'package:food_delivery/features/user/data/repositories/user_repository_imp.dart';
@@ -22,19 +27,26 @@ Future<void> init() async {
       forgetPasswordUsecase: sl(),
       logInWithGoogleUseCase: sl(),
       signUpUseCase: sl()));
+  sl.registerFactory(() => ProductsCubit(getAllProductsUseCase: sl()));
   //usecases
   sl.registerLazySingleton(() => LogInUseCase(userRepository: sl()));
   sl.registerLazySingleton(() => ForgetPasswordUsecase(userRepository: sl()));
   sl.registerLazySingleton(() => LogInWithGoogleUseCase(userRepository: sl()));
   sl.registerLazySingleton(() => SignUpUseCase(userRepository: sl()));
+  sl.registerLazySingleton(
+      () => GetAllProductsUseCase(productsRepository: sl()));
   //repositories
   sl.registerLazySingleton<UserRepository>(
       () => UserRepositoryImp(userRemoteDataSource: sl()));
+  sl.registerLazySingleton<ProductsRepository>(
+      () => ProductsRepositoryImp(productsRemoteDataSource: sl()));
   //data sources
   sl.registerLazySingleton<UserRemoteDataSource>(() => UserRemoteDataSourceImpl(
       firebaseAuth: sl(), googleSignIn: sl(), firestore: sl()));
   sl.registerLazySingleton<UserLocalDataSource>(
       () => UserLocalDataSourceImp(firebaseAuth: sl(), googleSignIn: sl()));
+  sl.registerLazySingleton<ProductsRemoteDataSource>(
+      () => ProductsRemoteDataSourceImpl(firestore: sl()));
   //!core
 
   //!externals

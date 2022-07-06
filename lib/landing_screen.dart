@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/inject_container.dart';
+import 'features/products/presentation/screens/products_screen.dart';
 import 'features/user/data/datasources/user_local_data_source.dart';
 import 'features/user/presentation/bloc/user_bloc.dart';
 import 'features/user/presentation/screens/sign_in_screen.dart';
-import 'home_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   LandingScreen({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class LandingScreen extends StatelessWidget {
               return Center(child: CircularProgressIndicator());
             }
             if (snapshot.hasData && snapshot.data != null) {
-              return HomeScreen();
+              return ProductsScreen();
             }
             return SignInScreen();
           },

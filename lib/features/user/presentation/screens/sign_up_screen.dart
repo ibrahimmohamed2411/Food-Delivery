@@ -43,6 +43,7 @@ class SignUpScreen extends StatelessWidget {
                   height: 40,
                 ),
                 CustomCard(
+                  padding: EdgeInsets.all(30),
                   child: Form(
                     key: _formKey,
                     child: Column(

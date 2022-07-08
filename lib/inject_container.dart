@@ -1,5 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:food_delivery/features/cart/data/datasources/cart_remote_data_source.dart';
+import 'package:food_delivery/features/cart/data/repositories/cart_repository_imp.dart';
+import 'package:food_delivery/features/cart/domain/repositories/cart_repository.dart';
+import 'package:food_delivery/features/cart/domain/usecases/add_cart_item_usecase.dart';
+import 'package:food_delivery/features/cart/domain/usecases/get_cart_items_usecase.dart';
+import 'package:food_delivery/features/cart/domain/usecases/remove_cart_item_usecase.dart';
+import 'package:food_delivery/features/cart/domain/usecases/update_cart_item_usecase.dart';
+import 'package:food_delivery/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:food_delivery/features/products/data/datasources/products_remote_data_source.dart';
 import 'package:food_delivery/features/products/data/repositories/products_repository_imp.dart';
 import 'package:food_delivery/features/products/domain/repositories/products_repository.dart';
@@ -28,6 +36,12 @@ Future<void> init() async {
       logInWithGoogleUseCase: sl(),
       signUpUseCase: sl()));
   sl.registerFactory(() => ProductsCubit(getAllProductsUseCase: sl()));
+  sl.registerFactory(() => CartCubit(
+        getCartItemsUseCase: sl(),
+        addCartItemUseCase: sl(),
+        updateCartItemUseCase: sl(),
+        removeCartItemUseCase: sl(),
+      ));
   //usecases
   sl.registerLazySingleton(() => LogInUseCase(userRepository: sl()));
   sl.registerLazySingleton(() => ForgetPasswordUsecase(userRepository: sl()));
@@ -35,11 +49,17 @@ Future<void> init() async {
   sl.registerLazySingleton(() => SignUpUseCase(userRepository: sl()));
   sl.registerLazySingleton(
       () => GetAllProductsUseCase(productsRepository: sl()));
+  sl.registerLazySingleton(() => AddCartItemUseCase(cartRepository: sl()));
+  sl.registerLazySingleton(() => UpdateCartItemUseCase(cartRepository: sl()));
+  sl.registerLazySingleton(() => GetCartItemsUseCase(repository: sl()));
+  sl.registerLazySingleton(() => RemoveCartItemUseCase(cartRepository: sl()));
   //repositories
   sl.registerLazySingleton<UserRepository>(
       () => UserRepositoryImp(userRemoteDataSource: sl()));
   sl.registerLazySingleton<ProductsRepository>(
       () => ProductsRepositoryImp(productsRemoteDataSource: sl()));
+  sl.registerLazySingleton<CartRepository>(
+      () => CartRepositoryImp(cartRemoteDataSource: sl()));
   //data sources
   sl.registerLazySingleton<UserRemoteDataSource>(() => UserRemoteDataSourceImpl(
       firebaseAuth: sl(), googleSignIn: sl(), firestore: sl()));
@@ -47,6 +67,8 @@ Future<void> init() async {
       () => UserLocalDataSourceImp(firebaseAuth: sl(), googleSignIn: sl()));
   sl.registerLazySingleton<ProductsRemoteDataSource>(
       () => ProductsRemoteDataSourceImpl(firestore: sl()));
+  sl.registerLazySingleton<CartRemoteDataSource>(
+      () => CartRemoteDataSourceImp(firestore: sl(), firebaseAuth: sl()));
   //!core
 
   //!externals

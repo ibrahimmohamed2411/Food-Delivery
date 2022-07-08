@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/config/routes/app_routes.dart';
 import 'package:food_delivery/features/products/presentation/cubit/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/screens/search.dart';
 import 'package:food_delivery/features/products/presentation/widgets/product_item.dart';
+import 'package:food_delivery/features/user/presentation/bloc/user_bloc.dart';
 
 import '../../../../inject_container.dart';
+import '../../../user/data/datasources/user_local_data_source.dart';
 import '../widgets/seperator_item.dart';
 
 class ProductsScreen extends StatelessWidget {
@@ -15,6 +18,24 @@ class ProductsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<ProductsCubit>()..getAllProducts(),
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              IconButton(
+                onPressed: () {
+                  sl<UserLocalDataSource>().signOut();
+                },
+                icon: Icon(Icons.logout),
+              ),
+              IconButton(
+                onPressed: () {
+                  
+                },
+                icon: Icon(Icons.shopping_basket),
+              ),
+            ],
+          ),
+        ),
         body: DefaultTabController(
           length: 4,
           child: SafeArea(
@@ -107,10 +128,14 @@ class ProductsScreen extends StatelessWidget {
                   (BuildContext context, bool innerBoxIsScrolled) => [
                 SliverAppBar(
                   backgroundColor: Colors.grey[100],
-                  leading: const Icon(Icons.list),
                   foregroundColor: Colors.black,
-                  actions: const [
-                    Icon(Icons.add_shopping_cart_rounded),
+                  actions: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(AppRoutes.cartScreen);
+                      },
+                      icon: Icon(Icons.add_shopping_cart_rounded),
+                    ),
                   ],
                   expandedHeight: 350,
                   elevation: 0.0,

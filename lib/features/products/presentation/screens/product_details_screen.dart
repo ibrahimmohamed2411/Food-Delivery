@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/custom_card.dart';
+import '../../../cart/presentation/cubit/cart_cubit.dart';
 import '../../domain/entities/products.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -163,9 +165,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 backgroundColor: Colors.deepOrange,
                               ),
                               onPressed: () {
-                                // BlocProvider.of<CartCubit>(context)
-                                //     .addItem(product, state.itemCount);
-                                // Navigator.of(context).pop();
+                                BlocProvider.of<CartCubit>(context)
+                                    .addItem(widget.product, quantity);
+                                Navigator.of(context).pop();
                               },
                               child: Padding(
                                 padding:
@@ -228,7 +230,6 @@ Widget buildSliverAppBar(Product product) {
     pinned: true,
     stretch: true,
     backgroundColor: Colors.deepOrange,
-  
     flexibleSpace: FlexibleSpaceBar(
       centerTitle: true,
       // title: Text(

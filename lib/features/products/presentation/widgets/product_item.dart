@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/config/routes/app_routes.dart';
 import 'package:food_delivery/core/utils/media_query_values.dart';
 
 import '../../domain/entities/products.dart';
@@ -15,8 +16,8 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ProductDetailsScreen(product: product)));
+        Navigator.of(context)
+            .pushNamed(AppRoutes.productDetailsScreen, arguments: product);
       },
       child: Stack(
         children: [

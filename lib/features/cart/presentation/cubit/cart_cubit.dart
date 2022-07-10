@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:food_delivery/features/cart/domain/usecases/add_cart_item_usecase.dart';
+import 'package:food_delivery/features/cart/domain/usecases/clear_cart_usecase.dart';
 import 'package:food_delivery/features/cart/domain/usecases/get_cart_items_usecase.dart';
 import 'package:food_delivery/features/cart/domain/usecases/update_cart_item_usecase.dart';
-import 'package:food_delivery/features/cart/presentation/widgets/cart_item.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import '../../../products/domain/entities/products.dart';
@@ -23,12 +24,14 @@ class CartCubit extends Cubit<CartState> {
   final AddCartItemUseCase addCartItemUseCase;
   final UpdateCartItemUseCase updateCartItemUseCase;
   final RemoveCartItemUseCase removeCartItemUseCase;
-  CartCubit(
-      {required this.getCartItemsUseCase,
-      required this.addCartItemUseCase,
-      required this.updateCartItemUseCase,
-      required this.removeCartItemUseCase})
-      : super(CartInitial());
+  final ClearCartUseCase clearCartUseCase;
+  CartCubit({
+    required this.getCartItemsUseCase,
+    required this.addCartItemUseCase,
+    required this.updateCartItemUseCase,
+    required this.removeCartItemUseCase,
+    required this.clearCartUseCase,
+  }) : super(CartInitial());
   Future<void> getCartItems() async {
     emit(CartLoadingState());
     final cartItemsOrFailure = await getCartItemsUseCase(NoParams());
@@ -144,5 +147,14 @@ class CartCubit extends Cubit<CartState> {
         },
       ),
     );
+  }
+
+  Future<void> clearCart() async {
+    final SuccessOrFailure = await clearCartUseCase(NoParams());
+    SuccessOrFailure.fold(
+      (failure) => debugPrint('failed to clear cart'),
+      (_) => CartLoadedState(cartItems: []),
+    );
+    emit(CartLoadedState(cartItems: []));
   }
 }

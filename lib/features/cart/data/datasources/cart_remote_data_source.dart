@@ -10,6 +10,7 @@ abstract class CartRemoteDataSource {
   Future<Unit> addCartItem({required CartModel cartModel});
   Future<Unit> updateCartItem({required CartModel cartModel});
   Future<Unit> removeCartItem({required CartModel cartModel});
+  Future<Unit> clearCart();
 }
 
 class CartRemoteDataSourceImp implements CartRemoteDataSource {
@@ -65,6 +66,21 @@ class CartRemoteDataSourceImp implements CartRemoteDataSource {
         .collection('cartItems')
         .doc(cartModel.productId)
         .delete();
+    return Future.value(unit);
+  }
+
+  @override
+  Future<Unit> clearCart() async{
+    final batch = firestore.batch();
+    final snapshots =  await firestore
+        .collection('cart')
+        .doc(firebaseAuth.currentUser!.uid)
+        .collection('cartItems').get();
+    
+    for (var doc in snapshots.docs) {
+      batch.delete(doc.reference);
+    }
+    await batch.commit();
     return Future.value(unit);
   }
 }

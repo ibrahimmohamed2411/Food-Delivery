@@ -21,17 +21,32 @@ class ProductsScreen extends StatelessWidget {
         drawer: Drawer(
           child: ListView(
             children: [
-              IconButton(
-                onPressed: () {
+              ListTile(
+                leading: Icon(Icons.shopping_basket_outlined),
+                title: Text(
+                  'Orders',
+                  style: TextStyle(fontSize: 20),
+                ),
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutes.ordersScreen);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.shopping_basket_outlined),
+                title: Text(
+                  'Log Out',
+                  style: TextStyle(fontSize: 20),
+                ),
+                onTap: () {
                   sl<UserLocalDataSource>().signOut();
                 },
-                icon: Icon(Icons.logout),
               ),
-              IconButton(
-                onPressed: () {
-                  
+              ListTile(
+                title: Text('Profile'),
+                leading: Icon(Icons.person_outline),
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutes.profileScreen);
                 },
-                icon: Icon(Icons.shopping_basket),
               ),
             ],
           ),

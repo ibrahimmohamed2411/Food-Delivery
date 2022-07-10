@@ -68,4 +68,14 @@ class CartRepositoryImp implements CartRepository {
       return Left(ServerFailure(msg: error.message!));
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> clearCart() async{
+    try {
+      await cartRemoteDataSource.clearCart();
+      return Right(unit);
+    } on FirebaseException catch (error) {
+      return Left(ServerFailure(msg: error.message!));
+    }
+  }
 }

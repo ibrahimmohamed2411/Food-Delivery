@@ -5,6 +5,7 @@ import 'package:food_delivery/features/user/presentation/bloc/user_bloc.dart';
 import 'config/routes/app_routes.dart';
 import 'config/themes/app_theme.dart';
 import 'core/utils/app_strings.dart';
+import 'features/orders/presentation/cubit/orders_cubit.dart';
 import 'inject_container.dart';
 
 class FoodDeliveryApp extends StatelessWidget {
@@ -16,6 +17,9 @@ class FoodDeliveryApp extends StatelessWidget {
       providers: [
         BlocProvider<UserBloc>(
           create: (context) => sl<UserBloc>(),
+        ),
+         BlocProvider<OrdersCubit>(
+          create: (context) => sl<OrdersCubit>(),
         ),
       ],
       child: MaterialApp(

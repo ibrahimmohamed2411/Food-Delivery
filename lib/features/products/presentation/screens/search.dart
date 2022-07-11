@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/products/data/datasources/products_remote_data_source.dart';
-import 'package:food_delivery/features/products/domain/entities/products.dart';
-import 'package:food_delivery/features/products/presentation/widgets/product_item.dart';
-import 'package:food_delivery/features/products/presentation/widgets/seperator_item.dart';
+import '../../data/datasources/products_remote_data_source.dart';
+import '../../domain/entities/products.dart';
+import '../widgets/product_item.dart';
+import '../widgets/seperator_item.dart';
 
 import '../../../../inject_container.dart';
 import '../widgets/item_not_found.dart';

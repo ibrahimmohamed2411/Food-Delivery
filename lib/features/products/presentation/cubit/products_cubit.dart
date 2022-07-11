@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:food_delivery/features/products/domain/usecases/get_all_products_usecase.dart';
+import '../../domain/usecases/get_all_products_usecase.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/entities/products.dart';

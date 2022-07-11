@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:food_delivery/features/cart/data/models/cart_model.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
-import 'package:food_delivery/features/orders/domain/entities/order.dart';
-import 'package:food_delivery/features/orders/domain/usecases/get_orders_usecase.dart';
+import 'package:flutter/foundation.dart';
+import '../../../cart/data/models/cart_model.dart';
+import '../../../cart/domain/entities/cart.dart';
+import '../../domain/entities/order.dart';
+import '../../domain/usecases/get_orders_usecase.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import 'package:food_delivery/features/orders/domain/entities/order.dart'
@@ -30,8 +31,9 @@ class OrdersCubit extends Cubit<OrdersState> {
   Future<void> makeOrder(List<Cart> cartItems) async {
     final orderItem = Order(
       orderDate: DateTime.now(),
-      orderItems: cartItems ,
-      orderPrice: cartItems.fold(0.0, (sum, item) => sum + item.price),
+      orderItems: cartItems,
+      orderPrice: cartItems.fold(
+          0, (sum, cartItem) => sum + cartItem.price * cartItem.quantity),
     );
 
     final orderSuccessOrFailure =

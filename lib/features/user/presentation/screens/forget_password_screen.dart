@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/core/utils/validators.dart';
-import 'package:food_delivery/core/widgets/custom_card.dart';
-import 'package:food_delivery/core/widgets/custom_elevated_button.dart';
-import 'package:food_delivery/core/widgets/custom_form_field.dart';
+import '../../../../core/utils/validators.dart';
+import '../../../../core/widgets/custom_card.dart';
+import '../../../../core/widgets/custom_elevated_button.dart';
+import '../../../../core/widgets/custom_form_field.dart';
 
 import '../bloc/user_bloc.dart';
 

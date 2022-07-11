@@ -1,4 +1,4 @@
-import 'package:food_delivery/features/products/domain/entities/products.dart';
+import '../../domain/entities/products.dart';
 
 class ProductModel extends Product {
   ProductModel(

@@ -1,6 +1,5 @@
-import 'package:food_delivery/features/cart/data/models/cart_model.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
-import 'package:food_delivery/features/orders/domain/entities/order.dart';
+import '../../../cart/data/models/cart_model.dart';
+import '../../domain/entities/order.dart';
 
 class OrderModel extends Order {
   OrderModel(
@@ -33,28 +32,4 @@ class OrderModel extends Order {
   }
 }
 
-// class OrderItemModel extends OrderItem {
-//   OrderItemModel(
-//       {required String imageUrl,
-//       required num price,
-//       required int quantity,
-//       required String title})
-//       : super(
-//             imageUrl: imageUrl, price: price, quantity: quantity, title: title);
-//   factory OrderItemModel.fromJson(Map<String, dynamic> json) {
-//     return OrderItemModel(
-//       imageUrl: json['imageUrl'] as String,
-//       price: json['price'] as num,
-//       quantity: json['quantity'] as int,
-//       title: json['title'] as String,
-//     );
-//   }
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'imageUrl': imageUrl,
-//       'price': price,
-//       'quantity': quantity,
-//       'title': title,
-//     };
-//   }
-// }
+

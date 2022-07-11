@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:food_delivery/core/usecases/usecase.dart';
-import 'package:food_delivery/features/user/domain/usecases/forget_password_usecase.dart';
-import 'package:food_delivery/features/user/domain/usecases/log_in_usecase.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../../domain/usecases/forget_password_usecase.dart';
+import '../../domain/usecases/log_in_usecase.dart';
 
 import '../../domain/usecases/log_in_with_google.dart';
 import '../../domain/usecases/sign_up_usecase.dart';

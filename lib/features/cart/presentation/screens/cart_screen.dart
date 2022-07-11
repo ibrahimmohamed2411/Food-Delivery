@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/core/utils/media_query_values.dart';
-import 'package:food_delivery/core/widgets/custom_elevated_button.dart';
-import 'package:food_delivery/features/cart/presentation/widgets/cart_item.dart';
-import 'package:food_delivery/features/orders/presentation/cubit/orders_cubit.dart';
-import 'package:food_delivery/features/products/presentation/widgets/seperator_item.dart';
+import '../../../../core/utils/media_query_values.dart';
+import '../../../../core/widgets/custom_elevated_button.dart';
+import '../widgets/cart_item.dart';
+import '../../../orders/presentation/cubit/orders_cubit.dart';
+import '../../../products/presentation/widgets/seperator_item.dart';
 
 import '../cubit/cart_cubit.dart';
 import '../widgets/empty_cart.dart';

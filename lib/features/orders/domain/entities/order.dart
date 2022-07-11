@@ -1,4 +1,4 @@
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
+import '../../../cart/domain/entities/cart.dart';
 
 class Order {
   final DateTime orderDate;

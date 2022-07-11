@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/core/utils/media_query_values.dart';
+import '../../../../core/utils/media_query_values.dart';
 
 import '../../../../core/utils/app_colors.dart';
 class ItemNotFound extends StatelessWidget {

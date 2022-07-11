@@ -1,4 +1,4 @@
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
+import '../../domain/entities/cart.dart';
 
 class CartModel extends Cart {
   CartModel(

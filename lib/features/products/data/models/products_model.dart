@@ -1,5 +1,5 @@
-import 'package:food_delivery/features/products/data/models/product_model.dart';
-import 'package:food_delivery/features/products/domain/entities/products.dart';
+import 'product_model.dart';
+import '../../domain/entities/products.dart';
 
 class ProductsModel extends Products {
   ProductsModel.fromJson(List<Map<String, dynamic>> json) {

@@ -1,6 +1,6 @@
-import 'package:food_delivery/core/error/failures.dart';
+import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/usecases/usecase.dart';
+import '../../../../core/usecases/usecase.dart';
 
 import '../entities/cart.dart';
 import '../repositories/cart_repository.dart';

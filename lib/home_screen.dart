@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/user/data/datasources/user_local_data_source.dart';
+import 'features/user/data/datasources/user_local_data_source.dart';
 
 import 'inject_container.dart';
 

@@ -34,11 +34,12 @@ class OrderRepositoryImp implements OrderRepository {
         orderItems: order.orderItems
             .map(
               (e) => CartModel(
-                  title: e.title,
-                  price: e.price,
-                  productId: e.productId,
-                  quantity: e.quantity,
-                  imageUrl: e.imageUrl),
+                title: e.title,
+                price: e.price,
+                productId: e.productId,
+                quantity: e.quantity,
+                imageUrl: e.imageUrl,
+              ),
             )
             .toList(),
         orderPrice: order.orderPrice,

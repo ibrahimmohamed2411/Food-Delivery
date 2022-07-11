@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/core/utils/media_query_values.dart';
+import '../utils/media_query_values.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String label;

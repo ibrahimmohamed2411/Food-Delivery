@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:food_delivery/core/error/failures.dart';
-import 'package:food_delivery/core/usecases/usecase.dart';
-import 'package:food_delivery/features/user/domain/repositories/user_repository.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../repositories/user_repository.dart';
 
 class LogInUseCase implements UseCase<Unit, LogInParams> {
   final UserRepository userRepository;

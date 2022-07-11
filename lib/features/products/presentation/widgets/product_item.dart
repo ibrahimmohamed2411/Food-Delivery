@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/config/routes/app_routes.dart';
-import 'package:food_delivery/core/utils/media_query_values.dart';
+import '../../../../config/routes/app_routes.dart';
+import '../../../../core/utils/media_query_values.dart';
 
 import '../../domain/entities/products.dart';
 import '../screens/product_details_screen.dart';

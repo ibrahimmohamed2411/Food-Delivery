@@ -24,6 +24,7 @@ class OrderRemoteDataSourceImp implements OrderRemoteDataSource {
         .collection('orders')
         .doc(firebaseAuth.currentUser!.uid)
         .collection('personalOrders')
+        .orderBy('orderDate', descending: true)
         .get();
     debugPrint(orderItems.size.toString());
     return orderItems.docs

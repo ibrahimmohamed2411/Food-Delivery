@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/app.dart';
-import 'package:food_delivery/features/orders/data/models/order_model.dart';
-import 'package:food_delivery/features/orders/domain/entities/order.dart';
-import 'package:food_delivery/inject_container.dart';
+import 'app.dart';
+import 'features/orders/data/models/order_model.dart';
+import 'features/orders/domain/entities/order.dart';
+import 'inject_container.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

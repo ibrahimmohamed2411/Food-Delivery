@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:food_delivery/features/products/data/models/product_model.dart';
-import 'package:food_delivery/features/products/data/models/products_model.dart';
-import 'package:food_delivery/features/products/domain/entities/products.dart';
+import '../models/product_model.dart';
+import '../models/products_model.dart';
+import '../../domain/entities/products.dart';
 
 abstract class ProductsRemoteDataSource {
   Future<ProductsModel> getAllProducts();

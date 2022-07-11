@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:food_delivery/features/cart/data/models/cart_model.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
 
 abstract class CartRemoteDataSource {
   Future<List<CartModel>> getCartItems();

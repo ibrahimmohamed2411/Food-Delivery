@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:food_delivery/core/error/failures.dart';
-import 'package:food_delivery/features/user/data/datasources/user_remote_data_source.dart';
+import '../../../../core/error/failures.dart';
+import '../datasources/user_remote_data_source.dart';
 
 import '../../domain/repositories/user_repository.dart';
 

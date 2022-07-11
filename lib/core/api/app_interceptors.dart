@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:food_delivery/core/utils/app_strings.dart';
+import '../utils/app_strings.dart';
 
 class AppInterceptors extends Interceptor {
   @override

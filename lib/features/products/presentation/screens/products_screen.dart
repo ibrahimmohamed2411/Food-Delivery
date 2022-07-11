@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/config/routes/app_routes.dart';
-import 'package:food_delivery/features/products/presentation/cubit/products_cubit.dart';
-import 'package:food_delivery/features/products/presentation/screens/search.dart';
-import 'package:food_delivery/features/products/presentation/widgets/product_item.dart';
-import 'package:food_delivery/features/user/presentation/bloc/user_bloc.dart';
+import '../../../../config/routes/app_routes.dart';
+import '../cubit/products_cubit.dart';
+import 'search.dart';
+import '../widgets/product_item.dart';
+import '../../../user/presentation/bloc/user_bloc.dart';
 
 import '../../../../inject_container.dart';
 import '../../../user/data/datasources/user_local_data_source.dart';

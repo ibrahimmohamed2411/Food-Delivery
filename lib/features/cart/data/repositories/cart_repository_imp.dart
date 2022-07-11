@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:food_delivery/features/cart/data/datasources/cart_remote_data_source.dart';
-import 'package:food_delivery/features/cart/data/models/cart_model.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart.dart';
-import 'package:food_delivery/core/error/failures.dart';
+import '../datasources/cart_remote_data_source.dart';
+import '../models/cart_model.dart';
+import '../../domain/entities/cart.dart';
+import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/features/cart/domain/repositories/cart_repository.dart';
+import '../../domain/repositories/cart_repository.dart';
 
 class CartRepositoryImp implements CartRepository {
   final CartRemoteDataSource cartRemoteDataSource;

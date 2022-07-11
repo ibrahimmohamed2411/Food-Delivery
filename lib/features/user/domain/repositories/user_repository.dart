@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/error/failures.dart';
+import '../../../../core/error/failures.dart';
 
 abstract class UserRepository {
   Future<Either<Failure, Unit>> logIn(

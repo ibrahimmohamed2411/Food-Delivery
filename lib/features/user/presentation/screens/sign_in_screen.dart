@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_delivery/config/routes/app_routes.dart';
-import 'package:food_delivery/features/user/presentation/bloc/user_bloc.dart';
+import '../../../../config/routes/app_routes.dart';
+import '../bloc/user_bloc.dart';
 
 import '../../../../core/utils/validators.dart';
 import '../../../../core/widgets/custom_card.dart';

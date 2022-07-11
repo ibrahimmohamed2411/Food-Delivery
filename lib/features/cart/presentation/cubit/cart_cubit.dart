@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:food_delivery/features/cart/domain/usecases/add_cart_item_usecase.dart';
-import 'package:food_delivery/features/cart/domain/usecases/clear_cart_usecase.dart';
-import 'package:food_delivery/features/cart/domain/usecases/get_cart_items_usecase.dart';
-import 'package:food_delivery/features/cart/domain/usecases/update_cart_item_usecase.dart';
+import '../../domain/usecases/add_cart_item_usecase.dart';
+import '../../domain/usecases/clear_cart_usecase.dart';
+import '../../domain/usecases/get_cart_items_usecase.dart';
+import '../../domain/usecases/update_cart_item_usecase.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import '../../../products/domain/entities/products.dart';

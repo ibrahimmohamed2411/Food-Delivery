@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:food_delivery/core/api/status_code.dart';
+import 'status_code.dart';
 
 
 import '../../inject_container.dart';

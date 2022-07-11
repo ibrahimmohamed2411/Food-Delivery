@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/features/cart/presentation/cubit/cart_cubit.dart';
-import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
-import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
-import 'package:food_delivery/features/products/presentation/screens/product_details_screen.dart';
-import 'package:food_delivery/features/profile/presentation/screens/profile_screen.dart';
-import 'package:food_delivery/features/user/presentation/screens/forget_password_screen.dart';
-import 'package:food_delivery/features/user/presentation/screens/sign_up_screen.dart';
-import 'package:food_delivery/landing_screen.dart';
+import '../../features/cart/presentation/cubit/cart_cubit.dart';
+import '../../features/cart/presentation/screens/cart_screen.dart';
+import '../../features/orders/presentation/screens/orders_screen.dart';
+import '../../features/products/presentation/screens/product_details_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/user/presentation/screens/forget_password_screen.dart';
+import '../../features/user/presentation/screens/sign_up_screen.dart';
+import '../../landing_screen.dart';
 
 import '../../features/orders/presentation/cubit/orders_cubit.dart';
 import '../../features/products/domain/entities/products.dart';

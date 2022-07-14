@@ -19,6 +19,7 @@ class CustomFormField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         hintText: label,
+        
       ),
     );
   }

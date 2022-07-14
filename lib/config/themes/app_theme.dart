@@ -8,6 +8,7 @@ ThemeData appTheme() {
 
     hintColor: AppColors.hint,
     brightness: Brightness.light,
+    
     scaffoldBackgroundColor: Colors.white,
     // appBarTheme: AppBarTheme(
     //   centerTitle: true,

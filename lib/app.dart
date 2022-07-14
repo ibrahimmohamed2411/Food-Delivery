@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/firebase_messaging.dart';
 import 'features/user/presentation/bloc/user_bloc.dart';
 
 import 'config/routes/app_routes.dart';
 import 'config/themes/app_theme.dart';
 import 'core/utils/app_strings.dart';
 import 'features/orders/presentation/cubit/orders_cubit.dart';
+import 'features/user/presentation/screens/auth_screen.dart';
 import 'inject_container.dart';
 
 class FoodDeliveryApp extends StatelessWidget {
@@ -18,17 +20,14 @@ class FoodDeliveryApp extends StatelessWidget {
         BlocProvider<UserBloc>(
           create: (context) => sl<UserBloc>(),
         ),
-        BlocProvider<OrdersCubit>(
-          create: (context) => sl<OrdersCubit>(),
-        ),
       ],
       child: MaterialApp(
         title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         theme: appTheme(),
         onGenerateRoute: AppRoutes().onGenerateRoute,
-        // home: TestScreen(),
-
+        // home: AuthScreen(),
+        // home: FirebaseMessaging(),
         // supportedLocales: AppLocalizationsSetup.supportedLocales,
         // localeResolutionCallback:
         //     AppLocalizationsSetup.localeResolutionCallback,

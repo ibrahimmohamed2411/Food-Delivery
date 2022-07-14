@@ -17,7 +17,7 @@ class ErrorWidget extends StatelessWidget {
         Center(
           child: Icon(
             Icons.warning,
-            color: AppColors.primary,
+            // color: AppColors.primary,
             size: 150,
           ),
         ),
@@ -46,7 +46,7 @@ class ErrorWidget extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 15),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: AppColors.primary,
+              // primary: AppColors.primary,
               onPrimary: Theme.of(context).primaryColor,
               elevation: 500,
               shape: RoundedRectangleBorder(

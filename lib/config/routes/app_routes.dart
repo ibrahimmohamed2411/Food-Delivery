@@ -6,7 +6,6 @@ import '../../features/orders/presentation/screens/orders_screen.dart';
 import '../../features/products/presentation/screens/product_details_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/user/presentation/screens/forget_password_screen.dart';
-import '../../features/user/presentation/screens/sign_up_screen.dart';
 import '../../landing_screen.dart';
 
 import '../../features/orders/presentation/cubit/orders_cubit.dart';
@@ -17,7 +16,6 @@ final cartCubit = sl<CartCubit>()..getCartItems();
 
 class AppRoutes {
   static const String landingScreen = '/';
-  static const String signUpScreen = '/signUp';
   static const String forgetPasswordScreen = '/forgetPassword';
   static const String cartScreen = '/cart-screen';
   static const String productDetailsScreen = '/product-details-screen';
@@ -29,10 +27,7 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => LandingScreen(),
         );
-      case signUpScreen:
-        return MaterialPageRoute(
-          builder: (context) => SignUpScreen(),
-        );
+
       case forgetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => ForgetPasswordScreen(),

@@ -47,7 +47,7 @@ class Constant {
       msg: msg,
       textColor: Colors.red,
       toastLength: Toast.LENGTH_LONG,
-      backgroundColor: color ?? AppColors.primary,
+      backgroundColor: color ?? AppColors.importantColor,
       gravity: gravity ?? ToastGravity.BOTTOM,
     );
   }

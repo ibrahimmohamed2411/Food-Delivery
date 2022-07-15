@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/core/utils/app_colors.dart';
+import 'package:food_delivery/features/products/domain/entities/products.dart';
+import 'package:food_delivery/features/products/presentation/widgets/custom_drawer.dart';
 import '../../../../config/routes/app_routes.dart';
 import '../cubit/products_cubit.dart';
 import 'search.dart';
@@ -18,39 +21,7 @@ class ProductsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<ProductsCubit>()..getAllProducts(),
       child: Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                leading: Icon(Icons.shopping_basket_outlined),
-                title: Text(
-                  'Orders',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {
-                  Navigator.of(context).pushNamed(AppRoutes.ordersScreen);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.shopping_basket_outlined),
-                title: Text(
-                  'Log Out',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {
-                  sl<UserLocalDataSource>().signOut();
-                },
-              ),
-              ListTile(
-                title: Text('Profile'),
-                leading: Icon(Icons.person_outline),
-                onTap: () {
-                  Navigator.of(context).pushNamed(AppRoutes.profileScreen);
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: CustomDrawer(),
         body: DefaultTabController(
           length: 4,
           child: SafeArea(
@@ -149,7 +120,7 @@ class ProductsScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pushNamed(AppRoutes.cartScreen);
                       },
-                      icon: Icon(Icons.add_shopping_cart_rounded),
+                      icon: Icon(Icons.shopping_cart_outlined),
                     ),
                   ],
                   expandedHeight: 350,

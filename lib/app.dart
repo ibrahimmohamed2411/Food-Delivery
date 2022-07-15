@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/firebase_messaging.dart';
+import 'package:food_delivery/test_screen.dart';
 import 'features/user/presentation/bloc/user_bloc.dart';
 
 import 'config/routes/app_routes.dart';
@@ -26,8 +27,8 @@ class FoodDeliveryApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: appTheme(),
         onGenerateRoute: AppRoutes().onGenerateRoute,
-        // home: AuthScreen(),
-        // home: FirebaseMessaging(),
+        // home: TestScreen(),
+
         // supportedLocales: AppLocalizationsSetup.supportedLocales,
         // localeResolutionCallback:
         //     AppLocalizationsSetup.localeResolutionCallback,

@@ -11,12 +11,16 @@ class CustomOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      title: Row(
-        children: [
-          Text(DateFormat('yyyy-MM-dd – kk:mm').format(orderItem.orderDate)),
-          Spacer(),
-          Text('Total= \$${orderItem.orderPrice}'),
-        ],
+      title: FittedBox(
+        child: Row(
+          children: [
+            Text(DateFormat('yyyy-MM-dd – kk:mm').format(orderItem.orderDate)),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Total= \EGP ${orderItem.orderPrice}'),
+          ],
+        ),
       ),
       children: orderItem.orderItems
           .map((item) => Padding(
@@ -28,7 +32,7 @@ class CustomOrderItem extends StatelessWidget {
                   ),
                   title: Text(item.title),
                   subtitle:
-                      Text('${item.quantity.toString()} x \$${item.price}'),
+                      Text('${item.quantity.toString()} x \EGP ${item.price}'),
                 ),
               ))
           .toList(),

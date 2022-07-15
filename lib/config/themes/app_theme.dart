@@ -4,22 +4,23 @@ import '../../core/utils/app_colors.dart';
 
 ThemeData appTheme() {
   return ThemeData(
-    // primaryColor: AppColors.primary,
+    // primaryColor: AppColors.importantColor,
 
     hintColor: AppColors.hint,
     brightness: Brightness.light,
-    
+
     scaffoldBackgroundColor: Colors.white,
-    // appBarTheme: AppBarTheme(
-    //   centerTitle: true,
-    //   color: Colors.transparent,
-    //   elevation: 0,
-    //   titleTextStyle: TextStyle(
-    //     color: Colors.black,
-    //     fontSize: 20,
-    //     fontWeight: FontWeight.bold,
-    //   ),
-    // ),
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      iconTheme: IconThemeData(color: Colors.black),
+      color: Colors.white,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
     // fontFamily: AppStrings.fontFamily,
     textTheme: TextTheme(
       headlineLarge: TextStyle(
@@ -44,6 +45,9 @@ ThemeData appTheme() {
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
+    ),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: AppColors.importantColor,
     ),
   );
 }

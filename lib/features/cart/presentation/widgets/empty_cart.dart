@@ -14,7 +14,15 @@ class EmptyCart extends StatelessWidget {
               Icons.dining_sharp,
               size: 150,
             ),
-            Text('Your cart is empty!'),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Your cart is empty!',
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            ),
           ],
         ),
       ),

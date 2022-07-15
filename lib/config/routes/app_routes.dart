@@ -4,6 +4,7 @@ import '../../features/cart/presentation/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/screens/cart_screen.dart';
 import '../../features/orders/presentation/screens/orders_screen.dart';
 import '../../features/products/presentation/screens/product_details_screen.dart';
+import '../../features/products/presentation/screens/products_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/user/presentation/screens/forget_password_screen.dart';
 import '../../landing_screen.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String productDetailsScreen = '/product-details-screen';
   static const String ordersScreen = '/orders-screen';
   static const String profileScreen = '/profile-screen';
+  static const String productsScreen = '/products-screen';
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case landingScreen:
@@ -66,6 +68,10 @@ class AppRoutes {
       case profileScreen:
         return MaterialPageRoute(
           builder: (context) => ProfileScreen(),
+        );
+      case productsScreen:
+        return MaterialPageRoute(
+          builder: (context) => ProductsScreen(),
         );
 
       default:

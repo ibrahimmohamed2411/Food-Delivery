@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/config/routes/app_routes.dart';
 import 'package:food_delivery/core/utils/media_query_values.dart';
 import 'package:food_delivery/core/widgets/custom_elevated_button.dart';
 
@@ -42,7 +43,10 @@ class EmptyOrders extends StatelessWidget {
             Spacer(),
             CustomElevatedButton(
               label: 'Create an order',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoutes.productsScreen, (route) => false);
+              },
             ),
           ],
         ),
